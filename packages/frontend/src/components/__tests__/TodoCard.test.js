@@ -99,4 +99,66 @@ describe('TodoCard Component', () => {
     
     expect(screen.queryByText(/Due:/)).not.toBeInTheDocument();
   });
+
+  describe('Overdue Visual Indicators', () => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+    it('should display danger-colored text and border for overdue todo', () => {
+      const overdueTodo = { ...mockTodo, dueDate: yesterdayStr, completed: 0 };
+      const { container } = render(<TodoCard todo={overdueTodo} {...mockHandlers} isLoading={false} />);
+      
+      const card = container.querySelector('.todo-card');
+      expect(card).toHaveClass('overdue');
+    });
+
+    it('should display clock icon for overdue todo', () => {
+      const overdueTodo = { ...mockTodo, dueDate: yesterdayStr, completed: 0 };
+      render(<TodoCard todo={overdueTodo} {...mockHandlers} isLoading={false} />);
+      
+      const clockIcon = screen.getByRole('img', { name: /overdue/i });
+      expect(clockIcon).toBeInTheDocument();
+      expect(clockIcon).toHaveTextContent('⏰');
+    });
+
+    it('should NOT display overdue styling for future due date', () => {
+      const futureTodo = { ...mockTodo, dueDate: tomorrowStr, completed: 0 };
+      const { container } = render(<TodoCard todo={futureTodo} {...mockHandlers} isLoading={false} />);
+      
+      const card = container.querySelector('.todo-card');
+      expect(card).not.toHaveClass('overdue');
+      expect(screen.queryByRole('img', { name: /overdue/i })).not.toBeInTheDocument();
+    });
+
+    it('should NOT display overdue styling when no due date', () => {
+      const todoNoDate = { ...mockTodo, dueDate: null, completed: 0 };
+      const { container } = render(<TodoCard todo={todoNoDate} {...mockHandlers} isLoading={false} />);
+      
+      const card = container.querySelector('.todo-card');
+      expect(card).not.toHaveClass('overdue');
+      expect(screen.queryByRole('img', { name: /overdue/i })).not.toBeInTheDocument();
+    });
+
+    it('should NOT display overdue styling when todo is completed', () => {
+      const completedOverdueTodo = { ...mockTodo, dueDate: yesterdayStr, completed: 1 };
+      const { container } = render(<TodoCard todo={completedOverdueTodo} {...mockHandlers} isLoading={false} />);
+      
+      const card = container.querySelector('.todo-card');
+      expect(card).not.toHaveClass('overdue');
+      expect(screen.queryByRole('img', { name: /overdue/i })).not.toBeInTheDocument();
+    });
+
+    it('should include accessible aria-label on clock icon', () => {
+      const overdueTodo = { ...mockTodo, dueDate: yesterdayStr, completed: 0 };
+      render(<TodoCard todo={overdueTodo} {...mockHandlers} isLoading={false} />);
+      
+      const clockIcon = screen.getByRole('img', { name: /overdue/i });
+      expect(clockIcon).toHaveAttribute('aria-label', 'Overdue');
+    });
+  });
 });

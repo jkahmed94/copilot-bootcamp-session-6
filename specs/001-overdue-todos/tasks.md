@@ -34,11 +34,11 @@
 
 **Duration**: 10 minutes
 
-- [ ] T001 Create `packages/frontend/src/utils/` directory for date utility functions
-- [ ] T002 Create `packages/frontend/src/utils/__tests__/` directory for utility tests
-- [ ] T003 Verify CSS variables `--danger-color` exist in `packages/frontend/src/styles/theme.css` (or `packages/frontend/src/App.css`)
+- [x] T001 Create `packages/frontend/src/utils/` directory for date utility functions
+- [x] T002 Create `packages/frontend/src/utils/__tests__/` directory for utility tests
+- [x] T003 Verify CSS variables `--danger-color` exist in `packages/frontend/src/styles/theme.css` (or `packages/frontend/src/App.css`)
 
-**Checkpoint**: Directory structure ready for implementation
+**Checkpoint**: ✅ Directory structure ready for implementation
 
 ---
 
@@ -54,22 +54,22 @@
 
 > **TEST-FIRST**: Write these tests FIRST, ensure they FAIL, then implement the function
 
-- [ ] T004 [P] [FOUNDATION] Write unit test: returns false when dueDate is null in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T005 [P] [FOUNDATION] Write unit test: returns false when dueDate is undefined in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T006 [P] [FOUNDATION] Write unit test: returns false when todo is completed (regardless of due date) in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T007 [P] [FOUNDATION] Write unit test: returns false when dueDate is today in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T008 [P] [FOUNDATION] Write unit test: returns false when dueDate is in future in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T009 [P] [FOUNDATION] Write unit test: returns true when dueDate is in past and not completed in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T010 [P] [FOUNDATION] Write unit test: handles invalid date strings gracefully in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
-- [ ] T011 [P] [FOUNDATION] Write unit test: ignores time component (date-only comparison) in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T004 [P] [FOUNDATION] Write unit test: returns false when dueDate is null in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T005 [P] [FOUNDATION] Write unit test: returns false when dueDate is undefined in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T006 [P] [FOUNDATION] Write unit test: returns false when todo is completed (regardless of due date) in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T007 [P] [FOUNDATION] Write unit test: returns false when dueDate is today in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T008 [P] [FOUNDATION] Write unit test: returns false when dueDate is in future in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T009 [P] [FOUNDATION] Write unit test: returns true when dueDate is in past and not completed in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T010 [P] [FOUNDATION] Write unit test: handles invalid date strings gracefully in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
+- [x] T011 [P] [FOUNDATION] Write unit test: ignores time component (date-only comparison) in `packages/frontend/src/utils/__tests__/dateUtils.test.js`
 
 ### Implementation of Date Utility
 
-- [ ] T012 [FOUNDATION] Implement `isOverdue(dueDateString, completed)` function in `packages/frontend/src/utils/dateUtils.js` following research.md specifications (date normalization to midnight, strict <100ms performance)
-- [ ] T013 [FOUNDATION] Add JSDoc documentation to `isOverdue()` function with examples in `packages/frontend/src/utils/dateUtils.js`
-- [ ] T014 [FOUNDATION] Run unit tests and verify 100% code coverage for `dateUtils.js`
+- [x] T012 [FOUNDATION] Implement `isOverdue(dueDateString, completed)` function in `packages/frontend/src/utils/dateUtils.js` following research.md specifications (date normalization to midnight, strict <100ms performance)
+- [x] T013 [FOUNDATION] Add JSDoc documentation to `isOverdue()` function with examples in `packages/frontend/src/utils/dateUtils.js`
+- [x] T014 [FOUNDATION] Run unit tests and verify 100% code coverage for `dateUtils.js` ✅ 12 tests pass, 100% coverage
 
-**Checkpoint**: Foundation ready - `isOverdue()` function fully tested and working. User story implementation can now begin in parallel.
+**Checkpoint**: ✅ Foundation ready - `isOverdue()` function fully tested and working. User story implementation can now begin in parallel.
 
 ---
 
@@ -92,29 +92,29 @@
 
 > **TEST-FIRST**: Write these tests FIRST, ensure they FAIL, then implement the component changes
 
-- [ ] T015 [P] [US1] Write component test: overdue todo displays danger-colored text and border in `packages/frontend/src/components/__tests__/TodoCard.test.js`
-- [ ] T016 [P] [US1] Write component test: overdue todo displays clock icon (⏰) in `packages/frontend/src/components/__tests__/TodoCard.test.js`
-- [ ] T017 [P] [US1] Write component test: future due date todo does NOT display overdue styling in `packages/frontend/src/components/__tests__/TodoCard.test.js`
-- [ ] T018 [P] [US1] Write component test: no due date todo does NOT display overdue styling in `packages/frontend/src/components/__tests__/TodoCard.test.js`
-- [ ] T019 [P] [US1] Write component test: completed overdue todo does NOT display overdue styling in `packages/frontend/src/components/__tests__/TodoCard.test.js`
-- [ ] T020 [P] [US1] Write component test: overdue styling includes accessible aria-label on clock icon in `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [x] T015 [P] [US1] Write component test: overdue todo displays danger-colored text and border in `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [x] T016 [P] [US1] Write component test: overdue todo displays clock icon (⏰) in `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [x] T017 [P] [US1] Write component test: future due date todo does NOT display overdue styling in `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [x] T018 [P] [US1] Write component test: no due date todo does NOT display overdue styling in `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [x] T019 [P] [US1] Write component test: completed overdue todo does NOT display overdue styling in `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [x] T020 [P] [US1] Write component test: overdue styling includes accessible aria-label on clock icon in `packages/frontend/src/components/__tests__/TodoCard.test.js`
 
 ### CSS Styling for User Story 1
 
-- [ ] T021 [P] [US1] Add CSS variables `--danger-color: #c62828` (light mode) and `--danger-color: #ef5350` (dark mode) in `packages/frontend/src/App.css` or `packages/frontend/src/styles/theme.css`
-- [ ] T022 [P] [US1] Add `.todo-card.overdue` CSS class with red left border (4px solid) and light red background tint in `packages/frontend/src/App.css`
-- [ ] T023 [P] [US1] Add `.todo-card.overdue .todo-title` CSS class with danger color text and font-weight 600 in `packages/frontend/src/App.css`
-- [ ] T024 [P] [US1] Add `.todo-card.overdue .todo-due-date` CSS class with danger color text and font-weight 600 in `packages/frontend/src/App.css`
-- [ ] T025 [P] [US1] Add `.overdue-icon` CSS class for 20px font-size, 8px margin-right in `packages/frontend/src/App.css`
-- [ ] T026 [P] [US1] Add dark mode overrides for `.todo-card.overdue` with adjusted background tint in `packages/frontend/src/App.css`
+- [x] T021 [P] [US1] CSS variables already exist: `--danger-color: #c62828` (light mode) and `--danger-color: #ef5350` (dark mode) in `packages/frontend/src/styles/theme.css`
+- [x] T022 [P] [US1] Add `.todo-card.overdue` CSS class with red left border (4px solid) and light red background tint in `packages/frontend/src/App.css`
+- [x] T023 [P] [US1] Add `.todo-card.overdue .todo-title` CSS class with danger color text and font-weight 600 in `packages/frontend/src/App.css`
+- [x] T024 [P] [US1] Add `.todo-card.overdue .todo-due-date` CSS class with danger color text and font-weight 600 in `packages/frontend/src/App.css`
+- [x] T025 [P] [US1] Add `.overdue-icon` CSS class for 20px font-size, 8px margin-right in `packages/frontend/src/App.css`
+- [x] T026 [P] [US1] Add dark mode overrides for `.todo-card.overdue` with adjusted background tint in `packages/frontend/src/App.css`
 
 ### TodoCard Component Implementation for User Story 1
 
-- [ ] T027 [US1] Import `isOverdue` utility and `useMemo` hook in `packages/frontend/src/components/TodoCard.js`
-- [ ] T028 [US1] Add `useMemo` to calculate `todoIsOverdue` with dependencies `[todo.dueDate, todo.completed]` in `packages/frontend/src/components/TodoCard.js`
-- [ ] T029 [US1] Update `cardClassName` to include `overdue` class when `todoIsOverdue` is true in `packages/frontend/src/components/TodoCard.js`
-- [ ] T030 [US1] Add conditional rendering of clock icon (⏰) with `role="img"` and `aria-label="Overdue"` when `todoIsOverdue` is true in `packages/frontend/src/components/TodoCard.js`
-- [ ] T031 [US1] Position clock icon next to due date text in `packages/frontend/src/components/TodoCard.js`
+- [x] T027 [US1] Import `isOverdue` utility and `useMemo` hook in `packages/frontend/src/components/TodoCard.js`
+- [x] T028 [US1] Add `useMemo` to calculate `todoIsOverdue` with dependencies `[todo.dueDate, todo.completed]` in `packages/frontend/src/components/TodoCard.js`
+- [x] T029 [US1] Update `cardClassName` to include `overdue` class when `todoIsOverdue` is true in `packages/frontend/src/components/TodoCard.js`
+- [x] T030 [US1] Add conditional rendering of clock icon (⏰) with `role="img"` and `aria-label="Overdue"` when `todoIsOverdue` is true in `packages/frontend/src/components/TodoCard.js`
+- [x] T031 [US1] Position clock icon next to due date text in `packages/frontend/src/components/TodoCard.js`
 
 ### Verification for User Story 1
 
