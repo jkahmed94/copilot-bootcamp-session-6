@@ -45,7 +45,7 @@ When users close and reopen the application, overdue visual indicators remain co
 
 - What happens when a todo has no due date? (Should never be marked overdue)
 - What happens when system date/time changes (timezone changes, manual clock adjustment)? (Should recalculate overdue status on app load)
-- What happens when a todo's due date is exactly at midnight? (Should be considered overdue starting the next day at 00:00:01)
+- What happens when a todo's due date is exactly at midnight? (Due date comparison is date-only; a todo with due date of Nov 13 becomes overdue at midnight on Nov 14, regardless of time component)
 - What happens when the user completes an overdue todo? (Overdue indicator should disappear immediately)
 - What happens when the user changes an overdue todo's due date to a future date? (Overdue indicator should disappear immediately)
 - What happens when the user removes the due date from an overdue todo? (Overdue indicator should disappear immediately)
@@ -58,12 +58,12 @@ When users close and reopen the application, overdue visual indicators remain co
 - **FR-002**: System MUST mark a todo as overdue when the current date is after the due date AND the todo status is incomplete
 - **FR-003**: System MUST NOT mark a todo as overdue if it has been completed, regardless of due date
 - **FR-004**: System MUST NOT mark a todo as overdue if it has no due date assigned
-- **FR-005**: System MUST display a distinct visual indicator for overdue todos that differentiates them from non-overdue items
+- **FR-005**: System MUST display a distinct visual indicator for overdue todos using the danger color from UI guidelines (#c62828 light mode, #ef5350 dark mode) for text and border styling on the card, plus a clock/timer icon (⏰ or 🕐), that differentiates them from non-overdue items
 - **FR-006**: System MUST recalculate overdue status when the application loads or refreshes
 - **FR-007**: System MUST immediately remove overdue indicator when a todo is marked as completed
 - **FR-008**: System MUST immediately remove overdue indicator when a todo's due date is changed to a future date or removed
 - **FR-009**: System MUST immediately add overdue indicator when a todo's due date is changed to a past date (and todo is incomplete)
-- **FR-010**: System MUST use date-only comparison (ignore time of day) when determining if a todo is overdue
+- **FR-010**: System MUST use date-only comparison (ignore time of day) when determining if a todo is overdue; a todo becomes overdue at midnight (00:00:00) on the day after its due date
 
 ### Key Entities
 
@@ -80,6 +80,16 @@ When users close and reopen the application, overdue visual indicators remain co
 - **SC-003**: 0% false positives - no todos without past due dates display as overdue
 - **SC-004**: Overdue status updates immediately (within 100ms) when user actions change todo completion status or due date
 - **SC-005**: Users can distinguish overdue items from non-overdue items in both light and dark modes with clear visual contrast
+
+## Clarifications
+
+### Session 2025-11-13
+
+- Q: What visual indicator style should be used for overdue todos? → A: Color + icon (e.g., red styling plus a warning/clock icon)
+- Q: When exactly does a todo become overdue (cutoff timing)? → A: A todo becomes overdue at midnight (00:00:00) on the day after its due date (date-only comparison, ignore time entirely)
+- Q: Which specific icon should be used for the overdue indicator? → A: Clock/timer icon (⏰ or 🕐) to emphasize time aspect
+- Q: What is the exact color styling approach for overdue todos? → A: Red text with darker red border on card
+- Q: Which specific red colors should be used? → A: Use danger color from UI guidelines
 
 ## Assumptions
 
