@@ -13,3 +13,10 @@ The project documentation will be built during the bootcamp sessions.
 - [Functional Requirements](../docs/functional-requirements.md) - Core functional requirements for the todo app
 - [UI Guidelines](../docs/ui-guidelines.md) - Design system and UI guidelines for the todo app
 - [Testing Guidelines](../docs/testing-guidelines.md) - Testing strategy and best practices
+
+## Active Technologies
+- JavaScript (ES6+), React 18.2.0, Node.js (via react-scripts 5.0.1) + React, React DOM, React Testing Library, Jest, Axios (001-overdue-todos)
+- N/A (uses existing backend API for todo persistence) (001-overdue-todos)
+
+## Recent Changes
+- 001-overdue-todos: Added JavaScript (ES6+), React 18.2.0, Node.js (via react-scripts 5.0.1) + React, React DOM, React Testing Library, Jest, Axios
